@@ -301,6 +301,10 @@ def render_quest_reveal(ds: DailySession):
 
     with get_session() as session:
         quest = session.get(Quest, ds.quest_id)
+        if quest:
+            # Eagerly load attributes before leaving session to avoid DetachedInstanceError
+            _ = quest.id, quest.title, quest.category, quest.rarity, quest.spice_level, quest.emoji, quest.desc, quest.assistance_text
+            session.expunge(quest)
 
     if not quest:
         st.error("Quest not found.")
