@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toolbox - DayRise Adventures</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-primary": "#006875",
+                "on-primary-container": "#00626e",
+                "on-tertiary-fixed": "#161c22",
+                "on-secondary-fixed": "#07006c",
+                "on-primary-fixed": "#001f24",
+                "on-primary": "#00363d",
+                "on-primary-fixed-variant": "#004f58",
+                "tertiary": "#e7edf5",
+                "primary-fixed": "#9cf0ff",
+                "background": "#0b1326",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed-variant": "#41474e",
+                "primary-fixed-dim": "#00daf3",
+                "on-tertiary-container": "#535a60",
+                "primary": "#c3f5ff",
+                "slate-900": "#0F172A",
+                "slate-800": "#1E293B",
+                "surface-dim": "#0b1326",
+                "secondary-container": "#3131c0",
+                "surface-container-high": "#222a3d",
+                "on-error": "#690005",
+                "surface-container-lowest": "#060e20",
+                "on-surface": "#dae2fd",
+                "surface-bright": "#31394d",
+                "surface-container-highest": "#2d3449",
+                "surface-tint": "#00daf3",
+                "error-container": "#93000a",
+                "surface-container-low": "#131b2e",
+                "icy-blue": "#00E5FF",
+                "on-secondary-container": "#b0b2ff",
+                "charcoal": "#111111",
+                "on-background": "#dae2fd",
+                "tertiary-container": "#cbd1d9",
+                "surface": "#0b1326",
+                "inverse-on-surface": "#283044",
+                "on-secondary-fixed-variant": "#2f2ebe",
+                "secondary-fixed-dim": "#c0c1ff",
+                "surface-variant": "#2d3449",
+                "primary-container": "#00e5ff",
+                "silver-matte": "#94A3B8",
+                "on-surface-variant": "#bac9cc",
+                "secondary-fixed": "#e1e0ff",
+                "surface-container": "#171f33",
+                "outline-variant": "#3b494c",
+                "inverse-surface": "#dae2fd",
+                "secondary": "#c0c1ff",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "on-secondary": "#1000a9",
+                "on-tertiary": "#2b3137",
+                "on-error-container": "#ffdad6",
+                "electric-indigo": "#6366F1",
+                "tertiary-fixed": "#dde3eb",
+                "outline": "#849396"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "section-gap": "64px",
+                "container-max": "1200px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-xl": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-caps": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-lg": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "22px",
+                        {
+                                "lineHeight": "30px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "26px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-xl": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-8 max-w-container-max mx-auto bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 h-16">
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary-container">DayRise Adventures</h1>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-primary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas - Mobile-First Centered Column -->
+<main class="w-full max-w-2xl mx-auto px-margin-mobile pt-24 pb-20 flex flex-col gap-8 flex-1">
+<!-- Screen Title Section -->
+<section class="flex flex-col gap-1 px-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">handyman</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Toolbox</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Utilities to aid your daily quests.</p>
+</section>
+<!-- Widget: Destiny Coin Flip -->
+<section class="bg-surface-container rounded-xl p-[24px] border border-outline-variant/40 relative overflow-hidden flex flex-col gap-6">
+<!-- Decorative background element -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-container opacity-5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="text-center relative z-10">
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider text-primary-container">Destiny Coin Flip</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Let fate decide your next move</p>
+</div>
+<div class="flex items-center justify-between gap-3 relative z-10">
+<!-- Choice A -->
+<div class="flex-1 bg-surface rounded-lg p-4 border border-outline-variant flex flex-col items-center gap-2 transition-all hover:border-primary-container/50 cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center line-clamp-2">Rest &amp; Read</span>
+</div>
+<!-- Flip Action Button -->
+<button class="shrink-0 w-14 h-14 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center hover:scale-105 active:scale-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface">
+<span class="material-symbols-outlined text-[28px]">casino</span>
+</button>
+<!-- Choice B -->
+<div class="flex-1 bg-surface rounded-lg p-4 border border-outline-variant flex flex-col items-center gap-2 transition-all hover:border-primary-container/50 cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">directions_run</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center line-clamp-2">Evening Run</span>
+</div>
+</div>
+</section>
+<!-- Archive Section (Bento Grid Style) -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Past Quests</h3>
+<button class="text-primary-container font-label-sm text-label-sm hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Legendary/Recent Archive Item (Full width) -->
+<div class="col-span-2 bg-surface-container-low rounded-xl p-[24px] border border-outline-variant/30 border-l-[4px] border-l-primary-container relative overflow-hidden flex items-center justify-between group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-1 z-10">
+<h4 class="font-label-sm text-label-sm text-on-surface text-[16px]">Slayed the Inbox Dragon</h4>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label-sm text-label-sm">Today, 2:30 PM</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container/10 text-primary-container flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined fill">check_circle</span>
+</div>
+</div>
+<!-- Standard Archive Item 1 -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 border-l-[4px] border-l-outline-variant flex flex-col gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-silver-matte text-[24px]">fitness_center</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface leading-tight">Iron Temple Visited</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Yesterday</p>
+</div>
+</div>
+<!-- Standard Archive Item 2 -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 border-l-[4px] border-l-outline-variant flex flex-col gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-silver-matte text-[24px]">menu_book</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface leading-tight">Ancient Tomes Read</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Oct 24, 2023</p>
+</div>
+</div>
+<!-- Standard Archive Item 3 -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 border-l-[4px] border-l-outline-variant flex flex-col gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-silver-matte text-[24px]">water_drop</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface leading-tight">Hydration Potion</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Oct 23, 2023</p>
+</div>
+</div>
+<!-- Standard Archive Item 4 -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 border-l-[4px] border-l-outline-variant flex flex-col gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-silver-matte text-[24px]">lightbulb</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface leading-tight">Mindfulness Session</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Oct 21, 2023</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>
