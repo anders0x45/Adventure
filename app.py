@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import random
 from datetime import date
 from core.db import init_db, get_session
 from core.models import User, DailySession, Quest, Preference, QuestCompletion
