@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DayRise Adventures - Quest Reveal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-primary": "#006875",
+                "on-primary-container": "#00626e",
+                "on-tertiary-fixed": "#161c22",
+                "on-secondary-fixed": "#07006c",
+                "on-primary-fixed": "#001f24",
+                "on-primary": "#00363d",
+                "on-primary-fixed-variant": "#004f58",
+                "tertiary": "#e7edf5",
+                "primary-fixed": "#9cf0ff",
+                "background": "#0b1326",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed-variant": "#41474e",
+                "primary-fixed-dim": "#00daf3",
+                "on-tertiary-container": "#535a60",
+                "primary": "#c3f5ff",
+                "slate-900": "#0F172A",
+                "slate-800": "#1E293B",
+                "surface-dim": "#0b1326",
+                "secondary-container": "#3131c0",
+                "surface-container-high": "#222a3d",
+                "on-error": "#690005",
+                "surface-container-lowest": "#060e20",
+                "on-surface": "#dae2fd",
+                "surface-bright": "#31394d",
+                "surface-container-highest": "#2d3449",
+                "surface-tint": "#00daf3",
+                "error-container": "#93000a",
+                "surface-container-low": "#131b2e",
+                "icy-blue": "#00E5FF",
+                "on-secondary-container": "#b0b2ff",
+                "charcoal": "#111111",
+                "on-background": "#dae2fd",
+                "tertiary-container": "#cbd1d9",
+                "surface": "#0b1326",
+                "inverse-on-surface": "#283044",
+                "on-secondary-fixed-variant": "#2f2ebe",
+                "secondary-fixed-dim": "#c0c1ff",
+                "surface-variant": "#2d3449",
+                "primary-container": "#00e5ff",
+                "silver-matte": "#94A3B8",
+                "on-surface-variant": "#bac9cc",
+                "secondary-fixed": "#e1e0ff",
+                "surface-container": "#171f33",
+                "outline-variant": "#3b494c",
+                "inverse-surface": "#dae2fd",
+                "secondary": "#c0c1ff",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "on-secondary": "#1000a9",
+                "on-tertiary": "#2b3137",
+                "on-error-container": "#ffdad6",
+                "electric-indigo": "#6366F1",
+                "tertiary-fixed": "#dde3eb",
+                "outline": "#849396"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "section-gap": "64px",
+                "container-max": "1200px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-xl": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-caps": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-lg": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "22px",
+                        {
+                                "lineHeight": "30px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "26px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-xl": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background min-h-screen text-on-background font-body-md relative overflow-hidden">
+<!-- Top Navigation (Mobile Hidden, Desktop Active) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max md:max-w-7xl mx-auto bg-surface/80 backdrop-blur-md shadow-sm h-16 hidden md:flex border-b border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            DayRise
+        </div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-on-surface transition-colors active:scale-95 transition-transform w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined font-light">notifications</span>
+</button>
+<button class="hover:text-on-surface transition-colors active:scale-95 transition-transform w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined font-light">history_edu</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/50 ml-2">
+<img alt="Adventurer Profile" class="w-full h-full object-cover grayscale opacity-80" data-alt="A small circular avatar portrait of a friendly digital adventurer. The illustration is playful and vibrant, featuring soft shading and a contemporary mobile-game aesthetic. Set against a light neutral background, consistent with a clean light-mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV1pj0A2klwe4ANM2Br4Sol219APNZtxfPwekwHOJR-dOIGLptpSv58guB7DUlPWNGn6pGFjaxYaY-22S_ObuNZMz1sfdekW7KuYO6i8eRYXfqcQRn3ux1rAwXzXv5bgxHBsDfbvhchWjWwGxFRVQlO-GILtCuvZC_2i6_gZwYlLCOxHezf6YKU5HJ-cjmhORVNLNMc1nWJixmG3FPxCpu62Ym1jVuGiKvtQoSFNWMKURAArEHqeiw"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation (Desktop Only) -->
+<nav class="hidden lg:flex flex-col h-full py-8 border-r border-outline-variant/30 bg-surface-container-lowest shadow-lg h-screen w-64 fixed left-0 top-0 z-40 pt-24">
+<div class="px-6 pb-6 mb-6 border-b border-outline-variant/30 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-4 border border-outline-variant/50">
+<img alt="Adventurer Avatar" class="w-full h-full object-cover grayscale opacity-80" data-alt="A detailed digital illustration of a cheerful adventurer character, used as a profile avatar. The art style is playful and polished, similar to modern cozy mobile games. The lighting is soft and bright, fitting a light-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgM3C_BKXJC8-HPAsw6QdqOeAsv1Mj5DIFk1seTMkYSLgof37MTGwLumb-VQaYBnbbgWSnjA8BJ4UgR1bYEWDZqtdxcPaoCgUXmqRTn0FbHcGlQj2II5oFYKbDzov6G2CFXRgQiu-wlMmXYJtgH5zuyr2m6RM8BcAzsid893SEsAHStrnvr8b6-89ZXYaHQi_FTyyUO5uRYZMCzjFAJ-sIoMYd8MsaTaAD3gwgKA1ucNK2SphZOAg4"/>
+</div>
+<h2 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Master Adventurer</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-light">Level 24</p>
+</div>
+<ul class="flex flex-col gap-1 px-4">
+<li>
+<a class="flex items-center gap-4 text-on-surface font-medium pl-4 py-3 hover:bg-surface-variant/30 transition-all active:translate-x-1 transition-transform rounded-lg bg-surface-variant/50 border border-outline-variant/20" href="#">
+<span class="material-symbols-outlined font-light text-primary-container" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="text-sm">Daily Quest</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all active:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined font-light">backpack</span>
+<span class="text-sm font-light">Inventory</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all active:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined font-light">workspace_premium</span>
+<span class="text-sm font-light">Hall of Fame</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all active:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined font-light">settings</span>
+<span class="text-sm font-light">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 hover:bg-surface-variant/30 transition-all active:translate-x-1 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined font-light">groups</span>
+<span class="text-sm font-light">Guilds</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Canvas -->
+<main class="w-full max-w-[600px] mx-auto min-h-screen flex flex-col pt-12 pb-24 px-margin-mobile md:px-0 md:pt-32 lg:ml-80 relative z-10">
+<!-- Celebration Header -->
+<div class="mb-12">
+<span class="material-symbols-outlined text-3xl text-primary-container font-light mb-4 block">flare</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">New Quest Unlocked</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 font-light">A new challenge awaits, adventurer.</p>
+</div>
+<!-- Standard Quest Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden relative mb-8 flex flex-col transform transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Wellness</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant font-light">self_improvement</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Morning Meditation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 font-light leading-relaxed">Find 10 minutes of silence before the sun fully rises. Focus on your breathing and let the busy thoughts settle.</p>
+<!-- Assistance Tip -->
+<div class="border-l-2 border-outline-variant/50 pl-4 py-1">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2 tracking-widest">Pro Tip</h4>
+<p class="font-body-md text-body-md text-on-surface-variant font-light text-sm italic">Don't try to empty your mind entirely. Just notice when thoughts arise and gently return focus to your breath.</p>
+</div>
+</div>
+<div class="px-8 py-5 border-t border-outline-variant/20 bg-surface flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined font-light text-primary-container">stars</span>
+<span class="font-label-caps text-label-caps tracking-widest">+50 XP</span>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-2.5 rounded-md hover:bg-primary-fixed-dim transition-colors active:scale-95 uppercase tracking-widest border border-primary-container">
+                    Accept
+                </button>
+</div>
+</div>
+<!-- Legendary Quest Card Variant -->
+<div class="bg-surface-container-lowest rounded-xl border border-amber-500/30 shadow-sm overflow-hidden relative mb-8 flex flex-col transform transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span class="font-label-caps text-label-caps text-amber-500 uppercase tracking-widest">Legendary</span>
+</div>
+<span class="material-symbols-outlined text-amber-500 font-light">swords</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Slay the Procrastination Dragon</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 font-light leading-relaxed">Tackle the one monumental task you've been avoiding for over a week. Break it down, step by step, until victory is yours.</p>
+<!-- Assistance Tip -->
+<div class="border-l-2 border-amber-500/30 pl-4 py-1">
+<h4 class="font-label-caps text-label-caps text-amber-500 mb-2 tracking-widest">Insight</h4>
+<p class="font-body-md text-body-md text-on-surface-variant font-light text-sm italic">Start with just 5 minutes of focused effort. Often, the hardest part is simply unsheathing your sword.</p>
+</div>
+</div>
+<div class="px-8 py-5 border-t border-outline-variant/20 bg-surface flex justify-between items-center">
+<div class="flex items-center gap-2 text-amber-500">
+<span class="material-symbols-outlined font-light">stars</span>
+<span class="font-label-caps text-label-caps tracking-widest">+500 XP</span>
+</div>
+<button class="bg-transparent text-amber-500 font-label-caps text-label-caps px-6 py-2.5 rounded-md hover:bg-amber-500/10 transition-colors active:scale-95 uppercase tracking-widest border border-amber-500/50">
+                    Accept Legend
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container-lowest/90 backdrop-blur-md border-t border-outline-variant/30 md:hidden">
+<a class="flex flex-col items-center justify-center text-primary-container active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined font-light" style="font-variation-settings: 'FILL' 1;">swords</span>
+<span class="font-label-sm text-[10px] mt-1 font-light tracking-wide">Quest</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined font-light">fitbit_move</span>
+<span class="font-label-sm text-[10px] mt-1 font-light tracking-wide">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined font-light">menu_book</span>
+<span class="font-label-sm text-[10px] mt-1 font-light tracking-wide">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined font-light">explore</span>
+<span class="font-label-sm text-[10px] mt-1 font-light tracking-wide">Map</span>
+</a>
+</nav>
+</body></html>

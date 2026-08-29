@@ -1,0 +1,1 @@
+# DayRise Adventures core package

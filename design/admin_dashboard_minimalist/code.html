@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DayRise Adventures - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-primary": "#006875",
+                "on-primary-container": "#00626e",
+                "on-tertiary-fixed": "#161c22",
+                "on-secondary-fixed": "#07006c",
+                "on-primary-fixed": "#001f24",
+                "on-primary": "#00363d",
+                "on-primary-fixed-variant": "#004f58",
+                "tertiary": "#e7edf5",
+                "primary-fixed": "#9cf0ff",
+                "background": "#0b1326",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed-variant": "#41474e",
+                "primary-fixed-dim": "#00daf3",
+                "on-tertiary-container": "#535a60",
+                "primary": "#c3f5ff",
+                "slate-900": "#0F172A",
+                "slate-800": "#1E293B",
+                "surface-dim": "#0b1326",
+                "secondary-container": "#3131c0",
+                "surface-container-high": "#222a3d",
+                "on-error": "#690005",
+                "surface-container-lowest": "#060e20",
+                "on-surface": "#dae2fd",
+                "surface-bright": "#31394d",
+                "surface-container-highest": "#2d3449",
+                "surface-tint": "#00daf3",
+                "error-container": "#93000a",
+                "surface-container-low": "#131b2e",
+                "icy-blue": "#00E5FF",
+                "on-secondary-container": "#b0b2ff",
+                "charcoal": "#111111",
+                "on-background": "#dae2fd",
+                "tertiary-container": "#cbd1d9",
+                "surface": "#0b1326",
+                "inverse-on-surface": "#283044",
+                "on-secondary-fixed-variant": "#2f2ebe",
+                "secondary-fixed-dim": "#c0c1ff",
+                "surface-variant": "#2d3449",
+                "primary-container": "#00e5ff",
+                "silver-matte": "#94A3B8",
+                "on-surface-variant": "#bac9cc",
+                "secondary-fixed": "#e1e0ff",
+                "surface-container": "#171f33",
+                "outline-variant": "#3b494c",
+                "inverse-surface": "#dae2fd",
+                "secondary": "#c0c1ff",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "on-secondary": "#1000a9",
+                "on-tertiary": "#2b3137",
+                "on-error-container": "#ffdad6",
+                "electric-indigo": "#6366F1",
+                "tertiary-fixed": "#dde3eb",
+                "outline": "#849396"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "section-gap": "64px",
+                "container-max": "1200px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-xl": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-caps": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-lg": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "22px",
+                        {
+                                "lineHeight": "30px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "26px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-xl": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex">
+<!-- SideNavBar (Hidden on Mobile, Flex on LG) -->
+<nav class="hidden lg:flex flex-col h-full py-8 border-r border-outline-variant bg-surface-container-low shadow-lg h-screen w-64 fixed left-0 top-0 z-40">
+<div class="px-6 mb-8 flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-surface-variant overflow-hidden mb-4 border border-outline">
+<img alt="Adventurer Avatar" class="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a fantasy character serving as a digital avatar. The character is a confident, seasoned adventurer with subtle magical elements, like glowing eyes or faintly luminous tattoos. The background is a soft, abstracted blend of deep purple and vibrant coral colors from the Playful Contemporary brand palette. The lighting is flattering and studio-quality, emphasizing a modern, stylized aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBawW8GncTSLQ3Zc_UQMjT0pZ17coo1wQCN2Q3MGonaFKm5F1-D8b1kOOWLcZ-QJmqKk09wAWQRZqBrlijUcZ0g8_mVmep2swNL7DJVAu_vMl4-HDwDj7yyw1kuobb33ti7g4s_4OU3kZe9oHlxSKiZjpHgyTiwnBk5tiW2OLnAICILp3cERdCF9QgDIH94k5aGm3-cdfDN8Nkt5IxQB6-7Zu22oxZhSXvOkm7_a4lbxkNK0lMP2tjM"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary text-center">DayRise Adventures</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mt-1">Admin Control</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-4 text-primary font-bold border-l-2 border-primary pl-4 py-3 bg-surface-container-high transition-all hover:bg-surface-container-high active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="font-label-caps text-label-caps uppercase">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 transition-all hover:bg-surface-container-high active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-caps text-label-caps uppercase">Quests</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 transition-all hover:bg-surface-container-high active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps uppercase">Users</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant pl-4 py-3 transition-all hover:bg-surface-container-high active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps uppercase">Settings</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 w-full lg:ml-64 pt-20 pb-24 lg:pb-8 px-margin-mobile md:px-8 max-w-7xl mx-auto">
+<!-- TopAppBar (Visible on Mobile/Tablet, integrated into page flow on desktop if needed, but handled globally via fixed shell usually. Kept simple here for mobile) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-8 max-w-container-max md:max-w-7xl mx-auto bg-surface border-b border-outline-variant shadow-sm h-16 lg:hidden">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">DayRise Adventures</h1>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Overview</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Platform health and daily metrics.</p>
+</div>
+<!-- Stat Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Users</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">24,592</h3>
+</div>
+<div class="p-2 border border-outline-variant rounded text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-sm text-label-sm">+12% this week</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Quests Today</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">8,143</h3>
+</div>
+<div class="p-2 border border-outline-variant rounded text-secondary">
+<span class="material-symbols-outlined">swords</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-sm text-label-sm">+5% vs yesterday</span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary-fixed-dim"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Active Streaks</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">1,204</h3>
+</div>
+<div class="p-2 border border-outline-variant rounded text-tertiary-fixed-dim">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">horizontal_rule</span>
+<span class="font-label-sm text-label-sm">Steady</span>
+</div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-surface border border-outline-variant rounded shadow-sm overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Quests</h2>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant transition-colors" placeholder="Search quests..." type="text"/>
+</div>
+<button class="p-2 border border-outline-variant text-on-surface-variant rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Quest ID</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Title</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Category</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Difficulty</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-md text-body-md">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 text-on-surface-variant font-mono text-sm">#Q-8921</td>
+<td class="p-4 font-medium text-on-surface">Morning Meditation</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 px-2 py-1 border border-outline-variant rounded text-on-surface-variant text-xs font-semibold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">self_improvement</span> Mindfulness
+                                </span>
+</td>
+<td class="p-4">
+<span class="px-2 py-1 rounded text-primary border border-primary text-xs font-semibold uppercase tracking-wide">Easy</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 text-on-surface-variant font-mono text-sm">#Q-8922</td>
+<td class="p-4 font-medium text-on-surface">Read 20 Pages</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 px-2 py-1 border border-outline-variant rounded text-on-surface-variant text-xs font-semibold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">menu_book</span> Knowledge
+                                </span>
+</td>
+<td class="p-4">
+<span class="px-2 py-1 rounded text-secondary border border-secondary text-xs font-semibold uppercase tracking-wide">Medium</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 text-on-surface-variant font-mono text-sm">#Q-8923</td>
+<td class="p-4 font-medium text-on-surface">5k Run</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 px-2 py-1 border border-outline-variant rounded text-on-surface-variant text-xs font-semibold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">directions_run</span> Fitness
+                                </span>
+</td>
+<td class="p-4">
+<span class="px-2 py-1 rounded text-error border border-error text-xs font-semibold uppercase tracking-wide">Hard</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant flex justify-between items-center text-on-surface-variant text-sm">
+<span>Showing 1 to 3 of 42 entries</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-high disabled:opacity-50" disabled="">Prev</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-high">Next</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-2 pt-2 bg-surface-container border-t border-outline-variant shadow-sm lg:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Quest</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary border-t-2 border-primary p-2 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Admin</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Journal</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Map</span>
+</button>
+</nav>
+</body></html>

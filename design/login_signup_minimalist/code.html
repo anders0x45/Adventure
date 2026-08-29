@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DayRise Adventures - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-primary": "#006875",
+                "on-primary-container": "#00626e",
+                "on-tertiary-fixed": "#161c22",
+                "on-secondary-fixed": "#07006c",
+                "on-primary-fixed": "#001f24",
+                "on-primary": "#00363d",
+                "on-primary-fixed-variant": "#004f58",
+                "tertiary": "#e7edf5",
+                "primary-fixed": "#9cf0ff",
+                "background": "#0b1326",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed-variant": "#41474e",
+                "primary-fixed-dim": "#00daf3",
+                "on-tertiary-container": "#535a60",
+                "primary": "#c3f5ff",
+                "slate-900": "#0F172A",
+                "slate-800": "#1E293B",
+                "surface-dim": "#0b1326",
+                "secondary-container": "#3131c0",
+                "surface-container-high": "#222a3d",
+                "on-error": "#690005",
+                "surface-container-lowest": "#060e20",
+                "on-surface": "#dae2fd",
+                "surface-bright": "#31394d",
+                "surface-container-highest": "#2d3449",
+                "surface-tint": "#00daf3",
+                "error-container": "#93000a",
+                "surface-container-low": "#131b2e",
+                "icy-blue": "#00E5FF",
+                "on-secondary-container": "#b0b2ff",
+                "charcoal": "#111111",
+                "on-background": "#dae2fd",
+                "tertiary-container": "#cbd1d9",
+                "surface": "#0b1326",
+                "inverse-on-surface": "#283044",
+                "on-secondary-fixed-variant": "#2f2ebe",
+                "secondary-fixed-dim": "#c0c1ff",
+                "surface-variant": "#2d3449",
+                "primary-container": "#00e5ff",
+                "silver-matte": "#94A3B8",
+                "on-surface-variant": "#bac9cc",
+                "secondary-fixed": "#e1e0ff",
+                "surface-container": "#171f33",
+                "outline-variant": "#3b494c",
+                "inverse-surface": "#dae2fd",
+                "secondary": "#c0c1ff",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "on-secondary": "#1000a9",
+                "on-tertiary": "#2b3137",
+                "on-error-container": "#ffdad6",
+                "electric-indigo": "#6366F1",
+                "tertiary-fixed": "#dde3eb",
+                "outline": "#849396"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "section-gap": "64px",
+                "container-max": "1200px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-xl": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-caps": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-lg": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "22px",
+                        {
+                                "lineHeight": "30px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "26px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "300"
+                        }
+                ],
+                "headline-xl": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Focus ring for inputs */
+        .input-glow:focus {
+            border-color: #00E5FF;
+            box-shadow: 0 0 0 1px #00E5FF;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1326;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b494c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #849396;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-full flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Centered Column Container -->
+<main class="w-full max-w-[400px] px-margin-mobile relative z-10">
+<!-- Welcome Header -->
+<div class="text-center mb-10">
+<div class="w-12 h-12 mx-auto mb-4 border border-outline-variant rounded-lg flex items-center justify-center bg-surface-container-low">
+<span class="material-symbols-outlined text-primary-container text-2xl">vpn_key</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-1">DayRise</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your quest awaits.</p>
+</div>
+<!-- Auth Card -->
+<div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant relative overflow-hidden">
+<!-- Toggle Container -->
+<div class="flex border-b border-outline-variant mb-6">
+<button class="flex-1 pb-3 font-label-sm text-label-sm text-primary-container border-b-2 border-primary-container transition-colors duration-200" id="btn-login">
+                    Log In
+                </button>
+<button class="flex-1 pb-3 font-label-sm text-label-sm text-on-surface-variant border-b-2 border-transparent hover:text-on-background transition-colors duration-200" id="btn-signup">
+                    Create Adventurer
+                </button>
+</div>
+<!-- Form -->
+<form class="space-y-5" id="auth-form">
+<!-- Adventurer Name (Username) -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider" for="username">Adventurer Name</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-sm">person</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded py-2 pl-9 pr-3 font-body-md text-on-surface placeholder:text-outline/50 input-glow transition-all outline-none" id="username" placeholder="e.g. Hero_123" required="" type="text"/>
+</div>
+</div>
+<!-- Secret Rune (PIN) -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider" for="pin">Secret Rune (4-Digit)</label>
+<div class="relative flex gap-3 justify-between" id="pin-container">
+<input class="w-full h-12 text-center text-lg font-headline-md bg-surface-container-lowest border border-outline-variant rounded input-glow transition-all outline-none focus:bg-surface pin-input" maxlength="1" required="" type="password"/>
+<input class="w-full h-12 text-center text-lg font-headline-md bg-surface-container-lowest border border-outline-variant rounded input-glow transition-all outline-none focus:bg-surface pin-input" maxlength="1" required="" type="password"/>
+<input class="w-full h-12 text-center text-lg font-headline-md bg-surface-container-lowest border border-outline-variant rounded input-glow transition-all outline-none focus:bg-surface pin-input" maxlength="1" required="" type="password"/>
+<input class="w-full h-12 text-center text-lg font-headline-md bg-surface-container-lowest border border-outline-variant rounded input-glow transition-all outline-none focus:bg-surface pin-input" maxlength="1" required="" type="password"/>
+</div>
+<!-- Hidden actual pin field for submission -->
+<input id="full-pin" name="pin" type="hidden"/>
+</div>
+<!-- Action Button -->
+<button class="w-full mt-8 bg-transparent border border-primary-container text-primary-container font-label-caps text-label-caps py-3 rounded hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-[0.98] flex items-center justify-center gap-2 uppercase tracking-widest shadow-[0_0_15px_rgba(0,229,255,0.15)] hover:shadow-[0_0_20px_rgba(0,229,255,0.3)]" type="submit">
+<span id="submit-text">Enter the Realm</span>
+<span class="material-symbols-outlined text-sm">east</span>
+</button>
+</form>
+</div>
+</main>
+<script>
+        // Toggle Logic
+        const btnLogin = document.getElementById('btn-login');
+        const btnSignup = document.getElementById('btn-signup');
+        const submitText = document.getElementById('submit-text');
+        let isLogin = true;
+
+        btnLogin.addEventListener('click', () => {
+            if (!isLogin) {
+                isLogin = true;
+                btnLogin.classList.add('text-primary-container', 'border-primary-container');
+                btnLogin.classList.remove('text-on-surface-variant', 'border-transparent');
+                
+                btnSignup.classList.remove('text-primary-container', 'border-primary-container');
+                btnSignup.classList.add('text-on-surface-variant', 'border-transparent');
+                
+                submitText.textContent = 'Enter the Realm';
+            }
+        });
+
+        btnSignup.addEventListener('click', () => {
+            if (isLogin) {
+                isLogin = false;
+                btnSignup.classList.add('text-primary-container', 'border-primary-container');
+                btnSignup.classList.remove('text-on-surface-variant', 'border-transparent');
+                
+                btnLogin.classList.remove('text-primary-container', 'border-primary-container');
+                btnLogin.classList.add('text-on-surface-variant', 'border-transparent');
+                
+                submitText.textContent = 'Begin Journey';
+            }
+        });
+
+        // PIN Input Logic
+        const pinInputs = document.querySelectorAll('.pin-input');
+        const hiddenPin = document.getElementById('full-pin');
+
+        pinInputs.forEach((input, index) => {
+            // Allow only numbers
+            input.addEventListener('input', (e) => {
+                input.value = input.value.replace(/[^0-9]/g, '');
+                
+                if (input.value && index < pinInputs.length - 1) {
+                    pinInputs[index + 1].focus();
+                }
+                updateHiddenPin();
+            });
+
+            // Handle backspace
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !input.value && index > 0) {
+                    pinInputs[index - 1].focus();
+                }
+            });
+            
+            // Handle paste
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = e.clipboardData.getData('text').replace(/[^0-9]/g, '').slice(0, 4);
+                
+                for(let i = 0; i < pastedData.length; i++) {
+                    if(pinInputs[i]) {
+                        pinInputs[i].value = pastedData[i];
+                        if (i < 3) pinInputs[i+1].focus();
+                    }
+                }
+                updateHiddenPin();
+            });
+        });
+
+        function updateHiddenPin() {
+            let pin = '';
+            pinInputs.forEach(input => pin += input.value);
+            hiddenPin.value = pin;
+        }
+
+        // Form Submission visual cue
+        document.getElementById('auth-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">refresh</span><span>Channeling...</span>';
+            btn.classList.add('opacity-80', 'cursor-wait');
+            
+            // Simulate network request
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.classList.remove('opacity-80', 'cursor-wait');
+                // Normally would redirect here
+                alert(`Welcome, ${document.getElementById('username').value}! Your quest begins.`);
+            }, 1500);
+        });
+    </script>
+</body></html>
