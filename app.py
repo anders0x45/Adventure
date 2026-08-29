@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from datetime import date
 from core.db import init_db, get_session
-from core.models import User, DailySession, Quest, Preference
+from core.models import User, DailySession, Quest, Preference, QuestCompletion
 from core.auth import (
     create_user, authenticate_user, get_user_preferences, update_user_preferences,
     update_user_spice_level, update_user_theme, username_exists
